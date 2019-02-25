@@ -1,2 +1,16 @@
-<!-- View for creating a new `Post` -->
-<!-- See http://guides.rubyonrails.org/form_helpers.html#dealing-with-basic-forms for more information -->
+<%= form_for @post do |f| %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,1 +1,9 @@
-<!-- View for showing a single `Post` -->
+<h3 class='post-body'>
+    <%= @post.title %>
+</h3>
+
+<div class='post-body'>
+    <%= @post.body %>
+</div>
+
+<%= button_to "Delete", @post, :method => :delete %>

@@ -1,1 +1,9 @@
-<!-- View for showing all `Post` -->
+<ul class="posts-list">
+<% @posts.each do |post| %>
+    <li class='post-item'>
+      <h3><%= post.title %></h3>
+      <div><%= post.body %></div>
+      <%= link_to "comments 5", post %>
+    </li>
+<% end %>
+</ul>
