@@ -1,9 +1,20 @@
+<div class='search-box'>
+    <%= form_tag posts_path, :method => 'get', :id => "posts_search" do %>
+        <div>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search" %>
+        </div>
+    <% end %>
+</div>
+
 <ul class="posts-list">
 <% @posts.each do |post| %>
     <li class='post-item'>
       <h3><%= post.title %></h3>
-      <div><%= post.body %></div>
-      <%= link_to "comments 5", post %>
+      <div><%= post.body.truncate(200) %></div>
+      <div class='comments-link'>
+        <%= link_to "comments #{post.comments.count}", post %>
+      </div>
     </li>
 <% end %>
 </ul>

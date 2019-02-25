@@ -4,8 +4,16 @@
     margin: 0;
     .post-item {
         margin: 20px;
+        .comments-link {
+            text-align: right;
+        }
     }
     h3 {
         margin: 0;
     }
+}
+.search-box, .delete-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
 }
