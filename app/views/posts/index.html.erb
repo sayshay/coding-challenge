@@ -13,7 +13,7 @@
       <h3><%= post.title %></h3>
       <div><%= post.body.truncate(200) %></div>
       <div class='comments-link'>
-        <%= link_to "comments #{post.comments.count}", post %>
+        <%= link_to "comments #{post.comments.size}", post %>
       </div>
     </li>
 <% end %>
