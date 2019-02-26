@@ -1,8 +1,7 @@
 <div class='search-box'>
     <%= form_tag posts_path, :method => 'get', :id => "posts_search" do %>
         <div>
-            <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Search" %>
+            <%= text_field_tag :search, params[:search], placeholder: 'Search...', class: 'search-input' %>
         </div>
     <% end %>
 </div>
@@ -11,7 +10,10 @@
 <% @posts.each do |post| %>
     <li class='post-item'>
       <h3><%= post.title %></h3>
-      <div><%= post.body.truncate(200) %></div>
+      <div class='post-body'>
+        <%= post.body.truncate(200) %>
+      </div>
+      <div class='posted-date'>Posted on: <%= post.created_at.strftime('%b %e %Y') %></div>
       <div class='comments-link'>
         <%= link_to "comments #{post.comments.size}", post %>
       </div>
