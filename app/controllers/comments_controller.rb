@@ -3,12 +3,15 @@ class CommentsController < ApplicationController
     before_action :set_comment, only: [:destroy, :edit, :update]
 
     def create
-        @post.comments << Comment.create(comments_params)
-        redirect_to @post
+        @comment = @post.comments.new(comments_params)
+        if @comment.save
+            redirect_to @post
+        else
+            render 'posts/show'
+        end
     end
 
     def destroy
-        p params
         @comment.destroy if @comment
         redirect_to @post
     end
