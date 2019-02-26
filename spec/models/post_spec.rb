@@ -6,7 +6,7 @@ describe "Post" do
     expect(post).to be_valid
   end
 
-  it "is searches for posts" do
+  it "searches for posts" do
     post1 = Post.create(title: 'hello world')
     post2 = Post.create(title: 'coding challenge')
     posts = Post.search('hello')
