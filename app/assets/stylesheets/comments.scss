@@ -1,1 +1,11 @@
-
+.comment-links {
+    display: flex;
+    justify-content: flex-end;
+    a {
+        padding-right: 10px;
+        text-decoration: none;
+    }
+}
+.new_comment {
+    margin-bottom: 15px;
+}

@@ -1,0 +1,10 @@
+<div>
+    <%= comment.body %>
+</div>
+
+<div class='comment-links'>
+    <%= link_to 'Delete', [@post, comment], method: :delete  %>
+    <%= link_to 'Edit ', edit_post_comment_path(@post, comment) %>
+</div>
+
+<hr>
